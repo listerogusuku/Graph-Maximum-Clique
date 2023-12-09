@@ -1,8 +1,15 @@
+// Projeto de Supercomputação | Engenharia de Computação - Insper
+// Professores: André Filipe e Miche Fornaciali
+
+// Bibliotecas padrão:
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <fstream>
+
+// Biblioteca para medir o tempo:
 #include <chrono>
+
 using namespace std;
 
 // Lê o grafo de um arquivo e retorna sua representação como matriz de adjacência
@@ -10,7 +17,6 @@ vector<vector<int>> LerGrafo(const string& nomeArquivo, int& numVertices) {
     ifstream arquivo(nomeArquivo);
     int numArestas;
     arquivo >> numVertices >> numArestas;
-
     vector<vector<int>> grafo(numVertices, vector<int>(numVertices, 0));
 
     for (int i = 0; i < numArestas; ++i) {
@@ -24,18 +30,18 @@ vector<vector<int>> LerGrafo(const string& nomeArquivo, int& numVertices) {
 }
 
 void BuscaExaustiva(const vector<vector<int>>& grafo, int numVertices, vector<int>& cliqueAtual, vector<vector<int>>& cliquesMaximais) {
-    bool ehMaximal = true;
+    bool maxima = true;
     for (int i : cliqueAtual) {
         for (int j : cliqueAtual) {
             if (i != j && grafo[i][j] == 0) {
-                ehMaximal = false;
+                maxima = false;
                 break;
             }
         }
-        if (!ehMaximal) break;
+        if (!maxima) break;
     }
 
-    if (ehMaximal) {
+    if (maxima) {
         // Adiciona a clique atual às cliques maximais
         cliquesMaximais.push_back(cliqueAtual);
     }
