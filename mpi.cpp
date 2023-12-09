@@ -130,7 +130,7 @@ int main(int argc, char* argv[]) {
         
         sort(cliqueMaxLocal.begin(), cliqueMaxLocal.end());
 
-        cout << "Clique máxima: ";
+        cout << "Clique máxima (MPI): ";
         for(int vertice : cliqueMaxLocal) {
             cout << vertice << " ";
         }

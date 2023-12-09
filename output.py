@@ -10,13 +10,13 @@ with open(nome_arquivo, 'r') as arquivo:
     # Lê o grafo a partir das linhas restantes
     G = nx.parse_adjlist(arquivo)
 
-# Encontrar todas as cliques maximais
+# Encontrar todas as cliques maximas
 cliques_maximais = list(nx.find_cliques(G))
 
 # Encontrar a clique máxima (a maior)
 clique_maxima = max(cliques_maximais, key=len)
 
-print("Cliques maximais encontradas:")
+print("Cliques máximas encontradas:")
 for clique in cliques_maximais:
     print(clique)
 

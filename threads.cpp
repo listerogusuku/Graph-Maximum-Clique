@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <omp.h>
 #include <fstream>
+#include <chrono>
 
 std::vector<std::vector<int>> LerGrafo(const std::string& nomeArquivo, int& numVertices) {
     std::ifstream arquivo(nomeArquivo);
@@ -101,7 +102,12 @@ int main(int argc, char* argv[]) {
     int numVertices;
     std::vector<std::vector<int>> grafo = LerGrafo(nome_arquivo_entrada, numVertices);
 
+    auto start_time = std::chrono::high_resolution_clock::now();
     EncontrarCliquesMaximaisOpenMP(grafo, numVertices);
+    
+    // Time counter:
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end_time - start_time;
 
     for (const auto& clique : cliquesMaximaisGlobal) {
         std::cout << "[";
@@ -112,12 +118,13 @@ int main(int argc, char* argv[]) {
         std::cout << "]" << std::endl;
     }
 
-    std::cout << "Clique máxima encontrada: [";
+    std::cout << "Clique máxima encontrada (OpenMP): [";
     for (int i = 0; i < cliqueMaximaGlobal.size(); ++i) {
         std::cout << cliqueMaximaGlobal[i] + 1;
         if (i < cliqueMaximaGlobal.size() - 1) std::cout << ", ";
     }
     std::cout << "]" << std::endl;
+    std::cout << "Tempo de execução: " << elapsed.count() << "s" << std::endl;
 
     return 0;
 }

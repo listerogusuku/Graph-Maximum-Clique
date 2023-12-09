@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <fstream>
+#include <fstream>  // Adicione esta linha para incluir a biblioteca <fstream>
 #include <chrono>
 
-
+// Função para ler o grafo a partir do arquivo de entrada
 std::vector<std::vector<int>> LerGrafo(const std::string& nomeArquivo, int& numVertices) {
     std::ifstream arquivo(nomeArquivo);
     int numArestas;
@@ -16,15 +16,16 @@ std::vector<std::vector<int>> LerGrafo(const std::string& nomeArquivo, int& numV
         int u, v;
         arquivo >> u >> v;
         grafo[u - 1][v - 1] = 1;
-        grafo[v - 1][u - 1] = 1;
+        grafo[v - 1][u - 1] = 1;  // O grafo é não direcionado
     }
 
     arquivo.close();
 
     return grafo;
 }
-// Encontra as cliques maximas via busca exaustiva
+// Função para encontrar todas as cliques maximais usando busca exaustiva
 void BuscaExaustiva(const std::vector<std::vector<int>>& grafo, int numVertices, std::vector<int>& cliqueAtual, std::vector<std::vector<int>>& cliquesMaximais) {
+    // Verifica se a clique atual é maximal
     bool ehMaximal = true;
     for (int i : cliqueAtual) {
         for (int j : cliqueAtual) {
@@ -37,11 +38,11 @@ void BuscaExaustiva(const std::vector<std::vector<int>>& grafo, int numVertices,
     }
 
     if (ehMaximal) {
-        // Adiciona o clique atual às cliques maximas
+        // Adiciona a clique atual às cliques maximais
         cliquesMaximais.push_back(cliqueAtual);
     }
 
-    // For para estender o clique atual
+    // Estende a clique atual
     for (int i = 0; i < numVertices; ++i) {
         bool podeAdicionar = true;
         for (int v : cliqueAtual) {
@@ -54,7 +55,7 @@ void BuscaExaustiva(const std::vector<std::vector<int>>& grafo, int numVertices,
         if (podeAdicionar) {
             cliqueAtual.push_back(i);
             BuscaExaustiva(grafo, numVertices, cliqueAtual, cliquesMaximais);
-            cliqueAtual.pop_back();
+            cliqueAtual.pop_back();  // Desfaz a adição para explorar outras possibilidades
         }
     }
 }
@@ -92,7 +93,7 @@ int main(int argc, char* argv[]) {
     });
 
     // Saída do resultado
-    std::cout << "Cliques maximais encontradas:" << std::endl;
+    std::cout << "Cliques máximas encontradas:" << std::endl;
     for (const auto& clique : cliquesMaximais) {
         std::cout << "[";
         for (int i = 0; i < clique.size(); ++i) {
