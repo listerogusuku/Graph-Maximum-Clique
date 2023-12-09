@@ -6,7 +6,6 @@
 #include <vector>
 #include <algorithm>
 #include <fstream>
-
 // Biblioteca para medir o tempo:
 #include <chrono>
 
@@ -42,7 +41,6 @@ void BuscaExaustiva(const vector<vector<int>>& grafo, int numVertices, vector<in
     }
 
     if (maxima) {
-        // Adiciona a clique atual às cliques maximais
         cliquesMaximais.push_back(cliqueAtual);
     }
 
