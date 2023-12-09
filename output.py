@@ -1,23 +1,16 @@
 import networkx as nx
 
-# Nome do arquivo de entrada
 nome_arquivo = "grafo.txt"
 
-# Abrir o arquivo e pular a primeira linha
 with open(nome_arquivo, 'r') as arquivo:
-    next(arquivo)  # Pula a primeira linha
+    next(arquivo)  #Pula a primeira linha do arquivo
+    G = nx.parse_adjlist(arquivo) #Lê o grafo:
 
-    # Lê o grafo a partir das linhas restantes
-    G = nx.parse_adjlist(arquivo)
+cliques_maximais = list(nx.find_cliques(G)) # Encontra cliques máximas:
+clique_maxima = max(cliques_maximais, key=len) # Encontrar a maior clique máxima
 
-# Encontrar todas as cliques maximas
-cliques_maximais = list(nx.find_cliques(G))
-
-# Encontrar a clique máxima (a maior)
-clique_maxima = max(cliques_maximais, key=len)
-
-print("Cliques máximas encontradas:")
+print("Cliques máximas encontradas: ")
 for clique in cliques_maximais:
     print(clique)
 
-print("Clique máxima encontrada:", clique_maxima)
+print("Clique máxima encontrada: ", clique_maxima)

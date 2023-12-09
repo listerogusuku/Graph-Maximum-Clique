@@ -94,7 +94,6 @@ int main(int argc, char* argv[]) {
         }
         cout << endl;
     }
-    cout << "Processo " << idProcesso << " processa vértices de " << inicio + 1 << " a " << fim << endl;
 
     chrono::high_resolution_clock::time_point tempoInicio;
     if(idProcesso == 0) {
@@ -138,7 +137,6 @@ int main(int argc, char* argv[]) {
         
         cout << "Tempo de execução: " << tempoDecorrido.count() << "s" << endl;
 
-        cout << "Tamanhos locais: ";
         for (int i = 0; i < numProcessos; i++) {
             cout << tamanhosCliqueMax[i] << " ";
         }
