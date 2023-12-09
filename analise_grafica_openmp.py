@@ -1,3 +1,5 @@
+# Análise gráfica dos resultados obtidos após rodar as implementações:
+
 import matplotlib.pyplot as plt
 
 # Dados para o primeiro gráfico
