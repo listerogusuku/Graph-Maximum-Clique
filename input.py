@@ -2,8 +2,8 @@ import networkx as nx
 import random
 
 #Parâmetros:
-num_vertices = 100  #Vértices no grafo
-probabilidade_conexao = 0.5  #Chances de haver uma aresta entre dois vértices (ajuste conforme necessário)
+num_vertices = 5  #Vértices no grafo
+probabilidade_conexao = 0.7  #Chances de haver uma aresta entre dois vértices (ajuste conforme necessário)
 
 grafo = nx.fast_gnp_random_graph(num_vertices, probabilidade_conexao) #Grafo aleatório densamente conectado
 
