@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Dados para o primeiro gráfico
+# Dados para o primeiro gráfico (obtidos rodando as implementações com o primeiro conjunto de dados)
 n_values_1 = [5, 10, 15, 20, 25]
 exaustiva_times_1 = [0.000113803, 0.00106659, 0.117804, 13.3899, 538.341]
 openmp_times_1 = [0.000210252, 0.000924805, 0.0499834, 7.49242, 244.992]

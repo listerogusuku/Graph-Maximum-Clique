@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 
-# Dados para o primeiro gráfico
+# Dados para o primeiro gráfico (obtidos rodando as implementações com o primeiro conjunto de dados)
 n_values_1 = [5, 10, 15, 20, 25]
 exaustiva_times_1 = [0.000113803, 0.00106659, 0.117804, 13.3899, 538.341]
 openmp_times_1 = [0.000210252, 0.000924805, 0.0499834, 7.49242, 244.992]
 
-# Dados para o segundo gráfico
+# Dados para o segundo gráfico (obtidos rodando as implementações com o segundo conjunto de dados)
 n_values_2 = [30, 40, 50, 70]
 exaustiva_times_2 = [0.0390696, 1.53986, 10.4161, 259.201]
 openmp_times_2 = [0.0300647, 1.19192, 7.62237, 179.651]
