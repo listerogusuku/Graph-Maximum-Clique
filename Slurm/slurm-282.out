@@ -29,4 +29,3 @@ Output do Job 282
 Processo 0 processa vértices de 1 a 20
 Clique máxima (MPI): 1 6 10 15 16 17 18 19 
 Tempo de execução: 4.5942e-05s
-Tamanhos locais: 8 

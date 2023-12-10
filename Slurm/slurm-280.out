@@ -19,4 +19,3 @@ Output do Job 280
 Processo 0 processa vértices de 1 a 10
 Clique máxima (MPI): 2 4 5 7 9 
 Tempo de execução: 2.646e-05s
-Tamanhos locais: 5 
