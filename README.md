@@ -8,7 +8,7 @@
 
 **Professores:** André Filipe e Michel Fornaciali
 
-O projeto está documentado na íntegra no arquivo .pdf intitulado _"Relatorio_Final_Projeto_Supercomp_Lister_Ogusuku_Ribeiro.pdf"_ presente neste repositório.
+O projeto está documentado na íntegra no arquivo .pdf intitulado [_"Relatorio_Final_Projeto_Supercomp_Lister_Ogusuku_Ribeiro.pdf"_](https://github.com/listerogusuku/Graph-Maximum-Clique/blob/main/Relatorio_Final_Projeto_Supercomp_Lister_Ogusuku_Ribeiro.pdf) presente neste repositório.
 
 ### Execução e compilação:
 
