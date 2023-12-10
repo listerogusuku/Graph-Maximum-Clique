@@ -28,7 +28,7 @@ vector<vector<int>> LerGrafo(const string& fileName, int& qntVertices) {
     return grafo; // Retorna a matriz de adjacência.
 }
 
-// Função que busca exaustivamente todas as cliques maximais no grafo.
+// Função que busca exaustivamente todas as cliques maximas no grafo.
 void buscaExaustiva(const vector<vector<int>>& grafo, int qntVertices, vector<int>& cliqueAtual, vector<vector<int>>& cliquesMaximas) {
     bool maxima = true; // Flag para verificar se a clique atual é máxima.
     
@@ -43,7 +43,7 @@ void buscaExaustiva(const vector<vector<int>>& grafo, int qntVertices, vector<in
         if (!maxima) break;
     }
 
-    // Se a clique atual é uma clique máxima, adiciona-a ao vetor de cliques maximais.
+    // Se a clique atual é uma clique máxima, adiciona-a ao vetor de cliques máximas.
     if (maxima) {
         cliquesMaximas.push_back(cliqueAtual);
     }
@@ -78,7 +78,7 @@ int main(int argc, char* argv[]) {
     int qntVertices;
     vector<vector<int>> grafo = LerGrafo(input_file, qntVertices); // Lê o grafo do arquivo.
     vector<int> cliqueAtual; // Armazena a clique que está sendo explorada no momento.
-    vector<vector<int>> cliquesMaximas; // Armazena todas as cliques maximais encontradas.
+    vector<vector<int>> cliquesMaximas; // Armazena todas as cliques maximas encontradas.
 
     // Mede o tempo de execução da busca exaustiva.
     auto start_time = chrono::high_resolution_clock::now();
@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
         return a.size() < b.size(); // Função para comparar o tamanho das cliques.
     });
 
-    // Imprime todas as cliques maximais encontradas.
+    // Imprime todas as cliques máximas encontradas.
     cout << "Cliques máximas encontradas: " << endl;
     for (const auto& clique : cliquesMaximas) {
         cout << "[";

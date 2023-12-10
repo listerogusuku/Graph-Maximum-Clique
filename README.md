@@ -16,11 +16,11 @@ O código-fonte para geração do grafo está disponível no arquivo _entrada.py
 
 Para verificar se foi encontrada a clique correta, será necessário utilizar o código _output.py_.
 
-#### heuristica.cpp - Heurística da Busca Exaustiva:
+#### exaustiva.cpp - Busca Exaustiva:
 
 ```cpp
-g++ heuristica.cpp -o heuristica
-./heuristica grafo_output.txt
+g++ exaustiva.cpp -o exaustiva
+./exaustiva grafo_output.txt
 ```
 
 #### threads_omp.cpp - Implementação OpenMP:
